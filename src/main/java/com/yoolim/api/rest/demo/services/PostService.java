@@ -41,7 +41,7 @@ public class PostService {
 //        postDAO.save(postDto);
         Post post = new Post(
                 postDto.getTitle(),
-                MultilineText.of(postDto.getTitle())
+                MultilineText.of(postDto.getContent())
         ); // Post 객체 생성에 대한 책임을 Post 클래스로 전가
 
         postRepository.save(post);
