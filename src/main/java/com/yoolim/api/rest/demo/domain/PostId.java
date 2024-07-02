@@ -35,4 +35,8 @@ public class PostId {
     public int hashCode() {
         return Objects.hash(id);
     }
+
+    public int compareTo(PostId other) {
+        return this.id.compareTo(other.toString());
+    }
 }

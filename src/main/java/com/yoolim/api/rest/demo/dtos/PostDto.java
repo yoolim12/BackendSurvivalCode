@@ -2,6 +2,8 @@ package com.yoolim.api.rest.demo.dtos;
 
 import com.yoolim.api.rest.demo.domain.Post;
 
+import java.util.UUID;
+
 public class PostDto {
     private String id;
     private String title;
@@ -18,6 +20,12 @@ public class PostDto {
 
     public PostDto(Post post) {
         this(post.id().toString(), post.title(), post.content().toString());
+    }
+
+    public PostDto(String title, String content) { // 이건 그냥 내가 추가해본거 ㅎ(강의내용 X)
+        this.id = UUID.randomUUID().toString().replace("-", "");
+        this.title = title;
+        this.content = content;
     }
 
     public String getId() {
